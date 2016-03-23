@@ -1,0 +1,32 @@
+<% @coupons.each do |coupon| %>
+  <% if coupon.id == @id.to_i %>
+    <form class="" action="/update/coupon" method="post">
+      <div class="form-group">
+        <input class="form-control" type="text" name="title" placeholder="<%= coupon.title %>">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="description" placeholder="<%= coupon.description %>">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="product" placeholder="<%= coupon.product %>">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" step="any" name="discount_price" placeholder="<%= coupon.discount_price %>">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="date" name="expiration_date" placeholder="<%= coupon.expiration_date %>">
+      </div>
+      <input visibility="hidden" type="hidden" name="coupon_id" value="<%= coupon.id %>">
+      <button class="btn btn-info" type="submit">Ready? GO!</button>
+    </form>
+    <a class="btn btn-danger" href="/">Cancel</a>
+  <% else %>
+    <h3><%= coupon.title %></h3>
+    <p><%= coupon.description %></p>
+    <p><%= coupon.product %></p>
+    <p><%= coupon.discount_price %></p>
+    <p><%= coupon.expiration_date %></p>
+  <% end %>
+
+<% end %>
+<h3>Hooray.</h3>

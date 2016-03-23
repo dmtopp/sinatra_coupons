@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-require 'sinatra'
-require 'json'
-require 'pg'
-require 'sinatra-activerecord'
-require 'pry'
+gem 'sinatra'
+gem 'json'
+gem 'pg'
+gem 'sinatra-activerecord'
+gem 'pry'
